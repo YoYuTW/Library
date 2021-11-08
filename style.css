@@ -1,0 +1,104 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin: 0;
+}
+
+header{
+    display: flex;
+    height: 10vh;
+    margin-top: 0;
+    justify-content: space-evenly;
+    gap: 60vw;
+    align-items: center;
+    border-bottom: 2px black solid;
+}
+
+main{
+    display: flex;
+    height: 85vh;
+    padding: 0;        
+}
+
+footer{
+    display: flex;
+    height: 5vh;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px black solid;
+}
+
+#addBookModel{
+    box-sizing: border-box;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    border-right: 2px black solid;
+    padding: 3vh 3vw;
+    gap: 1vh;
+}
+
+#addBook{
+    font-size: large;
+    font-weight: bold;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    border: 1px black solid;
+    padding: 1vh 1vw;
+}
+
+.input{
+    display: flex;
+    align-items: center;
+}
+
+.invisiable{
+    display: none;
+}
+
+#bookCase{
+    width: 80vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3vh 2vw;
+    padding: 2vh 2vw;
+    align-content: flex-start;
+}
+
+.book{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2vh 0;
+    width: 16vw;
+    height: 25vh;
+    align-items: center;
+    gap: 1vh;
+    border: 1px green solid;
+    border-radius: 5%;    
+    margin: 0;
+}
+
+.bookData{
+    box-sizing: border-box;
+    font-size: 28px;
+    font-weight: bold;
+    width: 80%;
+    text-align: center;
+}
+
+.bookButton{
+    font-size: 26px;
+    font-weight: bold;
+    width: 80%;
+    text-align: center;
+}

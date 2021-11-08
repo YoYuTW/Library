@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="demo.js" defer></script>
+    <title>Library</title>
+</head>
+<body>
+    <header>
+        <h1>Library</h1>        
+    </header>    
+    <main>  
+        <div id="addBookModel"> 
+            <button id="addBook">Add one</button>
+            <form id="addBookForm" class="invisiable" name="addBookForm">
+                <input name="title" required type="text" placeholder="Title"/>                
+                <input name="author" required type="text" placeholder="Author"/>                
+                <input name="pages" required type="number" placeholder="Pages"/>
+                <select name="read">
+                    <option value="Have read">Have read</option>
+                    <option value="Not read yet">Not read yet</option>
+                </select>               
+                <input type="button" value="Submit" id="submit"/>                
+            </form>           
+        </div>
+        <div id="bookCase">            
+        </div>
+    </main>
+    <footer>
+        <div>Banana</div>
+    </footer>    
+</body>
+</html>
