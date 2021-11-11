@@ -10,16 +10,14 @@ addBook.addEventListener("click",()=>{
 addBookSubmit.addEventListener("click",addBookToLibrary);
 displayBooks(myLibrary);
 
-
-function Book(title,author,pages,read){
-    this.title = title,
-    this.author = author,
-    this.pages = pages,
-    this.read = read
-}
-
-Book.prototype.info = function(){
-    console.log(`${this.name} by ${this.author}, ${this.pages}, ${this.read}`)
+class Book {
+    constructor(title,author,pages,read) {
+        this.title = title,
+        this.author = author,
+        this.pages = pages,
+        this.read = read
+    }
+    info() { console.log(`${this.name} by ${this.author}, ${this.pages}, ${this.read}`); }
 }
 
 function addBookToLibrary(){
