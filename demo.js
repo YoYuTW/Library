@@ -6,6 +6,7 @@ const addBookSubmit = document.querySelector("#submit");
 addBook.addEventListener("click",()=>{
     addBook.classList.add("invisiable");
     addBookForm.classList.remove("invisiable");
+    Array.from(addBookForm.childNodes).forEach((e) => e.required = true);
 })
 addBookSubmit.addEventListener("click",addBookToLibrary);
 displayBooks(myLibrary);
@@ -21,18 +22,28 @@ class Book {
 }
 
 function addBookToLibrary(){
-    let bookInput = document.forms['addBookForm'];
-    let newBook = new Book(bookInput[0].value,bookInput[1].value,bookInput[2].value,bookInput[3].value);
+    const [title,author,pages,reads] = [document.getElementsByName('title')[0],
+                                        document.getElementsByName('author')[0],
+                                        document.getElementsByName('pages')[0],
+                                        document.getElementsByName('read')[0]];                                                       
+    if ([title,author,pages].some((element) => !element.checkValidity())){   
+        console.log('error')
+        
+    }
+    else {
+    console.log(reads);
+    const newBook = new Book(title.value,author.value,pages.value,reads.value);
+    console.log(newBook);
     myLibrary.push(newBook);
     displayBooks(myLibrary);    
-    Array.from(bookInput).forEach((input,index)=>{ //clear form content
-        if(index<3){
-            input.value=""
-        }
-    });
+    
+    Array.from([title,author,pages]).forEach((input) => input.value = "");
+    
     addBook.classList.remove("invisiable");
+    [title,author,pages,reads].forEach((e) => e.required = false);
     addBookForm.classList.add("invisiable");
     localStorage.setItem('Library',JSON.stringify(myLibrary));    
+    }
 }
 
 function displayBooks(myLibrary){
@@ -87,10 +98,15 @@ function removeBook(e){
     if(window.confirm(`Are you sure to remove "${e.target.parentNode.querySelector(".bookTitle").textContent}"`)){
         e.target.parentNode.remove();
         myLibrary.splice(e.currentTarget.parentNode.id.replace('book',''),1);
+        localStorage.setItem('Library',JSON.stringify(myLibrary));
     }
     console.log(myLibrary[e.currentTarget.parentNode.id.replace('book','')]);
 }
 
 function storageBookList(myLibrary){
     localStorage.setItem('Library',JSON.stringify(myLibrary));
+}
+
+function checkFormValidaity() {
+    
 }
